@@ -1,0 +1,13 @@
+<div *ngFor="let item of forecast.list" class="weather-card">
+    <div class="weather-info">
+      <h2>{{ item.dt_txt | date:'fullDate' }} {{ item.dt_txt | date:'shortTime' }}</h2>
+      <p><strong>Temperatura:</strong> {{ item.main.temp }} °C</p>
+      <p><strong>Descripción:</strong> {{ item.weather[0].description }}</p>
+      <p><strong>Humedad:</strong> {{ item.main.humidity }}%</p>
+      <p><strong>Viento:</strong> {{ item.wind.speed }} m/s</p>
+    </div>
+    <div class="weather-icon">
+      <img [src]="'http://openweathermap.org/img/w/' + item.weather[0].icon + '.png'" alt="icon">
+    </div>
+  </div>
+  

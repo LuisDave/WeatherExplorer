@@ -1,0 +1,13 @@
+<div class="app-container">
+  <header class="app-header">
+    <h1>{{ title }}</h1>
+  </header>
+  <div class="search-container">
+    <app-search (searchEvent)="onSearch($event)"></app-search>
+    <button [routerLink]="['/current-weather', city]" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Clima Actual</button>
+    <button [routerLink]="['/forecast', city]" routerLinkActive="active">Pronóstico</button>
+  </div>
+  <main class="main-content">
+    <router-outlet></router-outlet>
+  </main>
+</div>

@@ -1,0 +1,14 @@
+<div class="weather-card">
+  <div class="weather-info">
+    <h2>Clima Actual en {{ city }}</h2>
+    <p><strong>{{ currentWeather.dt * 1000 | date:'fullDate' }} {{ currentWeather.dt * 1000 | date:'shortTime' }}</strong></p>
+    <p><strong>Temperatura:</strong> {{ currentWeather.main.temp }} °C</p>
+    <p><strong>Humedad:</strong> {{ currentWeather.main.humidity }}%</p>
+    <p><strong>Descripción:</strong> {{ currentWeather.weather[0].description }}</p>
+    <p><strong>Viento:</strong> {{ currentWeather.wind.speed }} m/s</p>
+    <p><strong>Presión:</strong> {{ currentWeather.main.pressure }} hPa</p>
+  </div>
+  <div class="weather-icon">
+    <img [src]="'http://openweathermap.org/img/w/' + currentWeather.weather[0].icon + '.png'" alt="icon">
+  </div>
+</div>
